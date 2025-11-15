@@ -1,57 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All CSS Transforms</title>
-  <style>
-    body {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      font-family: Arial, sans-serif;
-      color: white;
-      text-align: center;
-      padding: 40px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern CSS Transform Showcase</title>
+    <!-- Using the Inter font for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define a color palette for a consistent look */
+        :root {
+            --primary-color: #2c5364; /* Dark blue/teal */
+            --secondary-color: #38761d; /* Base box green */
+            --accent-color: #93c47d; /* Hover green */
+        }
+        body {
+            /* Enhanced gradient background */
+            background: linear-gradient(to bottom right, #0f2027, var(--primary-color));
+            font-family: 'Inter', Arial, sans-serif;
+            color: #ecf0f1; /* Light gray text */
+            text-align: center;
+            padding: 20px;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    h1 {
-      margin-top: 30px;
-    }
+        h1 {
+            margin: 30px 0 20px;
+            font-weight: 700;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+        
+        p {
+            margin-bottom: 50px;
+            font-size: 1.1em;
+            opacity: 0.8;
+        }
 
-    .container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 20px;
+            max-width: 1000px;
+            width: 100%;
+        }
 
-    .box {
-      width: 120px;
-      height: 120px;
-      background: #4caf50;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      transition: 0.6s ease;
-      cursor: pointer;
-    }
+        .box-wrapper {
+            /* Using wrapper for consistent sizing and alignment */
+            width: 150px; 
+            height: 150px;
+        }
 
-    /* Transform examples */
-    .translate:hover { transform: translate(50px, 30px); }
-    .rotate:hover { transform: rotate(45deg); }
-    .scale:hover { transform: scale(1.2px); }
-    .skew:hover { transform: skew(20deg, 10deg); }
-    .matrix:hover { transform: matrix(1, 0.5, -0.5, 1, 30, 20); }
-  </style>
+        .box {
+            width: 100%;
+            height: 100%;
+            background: var(--secondary-color);
+            border: 3px solid var(--accent-color);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            /* Combine transitions for smooth effect */
+            transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s ease; 
+            cursor: pointer;
+            /* Added depth with box-shadow */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Base hover effect */
+        .box:hover {
+            background: var(--accent-color);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Transform examples */
+        /* Translate: Move right and down */
+        .translate:hover { transform: translate(50px, 20px) rotate(5deg); } 
+        
+        /* Rotate: Spin 180 degrees */
+        .rotate:hover { transform: rotate(180deg); } 
+        
+        /* Scale: FIXED - Removed 'px'. Scale should be unitless. */
+        .scale:hover { transform: scale(1.3); } 
+        
+        /* Skew: Distort along X and Y axes */
+        .skew:hover { transform: skew(20deg, 10deg) translate(10px, -5px); } 
+        
+        /* Matrix: Combine all 2D transforms into one function */
+        .matrix:hover { transform: matrix(1.1, 0.5, -0.2, 1.1, 30, 20); }
+
+        /* Responsive adjustments for mobile view */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 20px;
+            }
+            .container {
+                gap: 20px;
+            }
+            .box-wrapper {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>🎯 CSS Transform Examples</h1>
-  <div class="container">
-    <div class="box translate">Translate</div>
-    <div class="box rotate">Rotate</div>
-    <div class="box scale">Scale</div>
-    <div class="box skew">Skew</div>
-    <div class="box matrix">Matrix</div>
-  </div>
+    <h1>🎯 Modern CSS Transform </h1>
+    <p>Hover over each box to see the transformation in action!</p>
+    <div class="container">
+        <div class="box-wrapper"><div class="box translate">Translate</div></div>
+        <div class="box-wrapper"><div class="box rotate">Rotate</div></div>
+        <div class="box-wrapper"><div class="box scale">Scale</div></div>
+        <div class="box-wrapper"><div class="box skew">Skew</div></div>
+        <div class="box-wrapper"><div class="box matrix">Matrix</div></div>
+    </div>
 </body>
-</html>                                                                                                                                                 
+</html>
