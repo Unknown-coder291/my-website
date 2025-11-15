@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All CSS Transforms</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      margin-top: 30px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .box {
+      width: 120px;
+      height: 120px;
+      background: #4caf50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      transition: 0.6s ease;
+      cursor: pointer;
+    }
+
+    /* Transform examples */
+    .translate:hover { transform: translate(50px, 30px); }
+    .rotate:hover { transform: rotate(45deg); }
+    .scale:hover { transform: scale(1.3px); }
+    .skew:hover { transform: skew(20deg, 10deg); }
+    .matrix:hover { transform: matrix(1, 0.5, -0.5, 1, 30, 20); }
+  </style>
+</head>
+<body>
+  <h1>🎯 CSS Transform Examples</h1>
+  <div class="container">
+    <div class="box translate">Translate</div>
+    <div class="box rotate">Rotate</div>
+    <div class="box scale">Scale</div>
+    <div class="box skew">Skew</div>
+    <div class="box matrix">Matrix</div>
+  </div>
+</body>
+</html>                                                                                                                                                 
